@@ -1,0 +1,284 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2E06A3E814ABE7BC00E8174D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E06A3E714ABE7BC00E8174D /* UIKit.framework */; };
+		2E06A3EA14ABE7BC00E8174D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E06A3E914ABE7BC00E8174D /* Foundation.framework */; };
+		2E06A3EC14ABE7BC00E8174D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E06A3EB14ABE7BC00E8174D /* CoreGraphics.framework */; };
+		2E06A3F214ABE7BC00E8174D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2E06A3F014ABE7BC00E8174D /* InfoPlist.strings */; };
+		2E06A3F414ABE7BC00E8174D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E06A3F314ABE7BC00E8174D /* main.m */; };
+		2E06A3F814ABE7BC00E8174D /* FilterAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E06A3F714ABE7BC00E8174D /* FilterAppDelegate.m */; };
+		2E06A3FB14ABE7BC00E8174D /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E06A3F914ABE7BC00E8174D /* MainStoryboard.storyboard */; };
+		2E06A3FE14ABE7BC00E8174D /* FilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E06A3FD14ABE7BC00E8174D /* FilterViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2E06A3E314ABE7BB00E8174D /* PhotoFilters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoFilters.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E06A3E714ABE7BC00E8174D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2E06A3E914ABE7BC00E8174D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2E06A3EB14ABE7BC00E8174D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2E06A3EF14ABE7BC00E8174D /* PhotoFilters-Info.plist */ = {isa = PBXFileReference; path = "PhotoFilters-Info.plist"; sourceTree = "<group>"; };
+		2E06A3F114ABE7BC00E8174D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2E06A3F314ABE7BC00E8174D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2E06A3F514ABE7BC00E8174D /* PhotoFilters-Prefix.pch */ = {isa = PBXFileReference; path = "PhotoFilters-Prefix.pch"; sourceTree = "<group>"; };
+		2E06A3F614ABE7BC00E8174D /* FilterAppDelegate.h */ = {isa = PBXFileReference; path = FilterAppDelegate.h; sourceTree = "<group>"; };
+		2E06A3F714ABE7BC00E8174D /* FilterAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FilterAppDelegate.m; sourceTree = "<group>"; };
+		2E06A3FA14ABE7BC00E8174D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		2E06A3FC14ABE7BC00E8174D /* FilterViewController.h */ = {isa = PBXFileReference; path = FilterViewController.h; sourceTree = "<group>"; };
+		2E06A3FD14ABE7BC00E8174D /* FilterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FilterViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2E06A3E014ABE7BB00E8174D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E06A3E814ABE7BC00E8174D /* UIKit.framework in Frameworks */,
+				2E06A3EA14ABE7BC00E8174D /* Foundation.framework in Frameworks */,
+				2E06A3EC14ABE7BC00E8174D /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2E06A3D814ABE7BB00E8174D = {
+			isa = PBXGroup;
+			children = (
+				2E06A3ED14ABE7BC00E8174D /* PhotoFilters */,
+				2E06A3E614ABE7BC00E8174D /* Frameworks */,
+				2E06A3E414ABE7BB00E8174D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2E06A3E414ABE7BB00E8174D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2E06A3E314ABE7BB00E8174D /* PhotoFilters.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2E06A3E614ABE7BC00E8174D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2E06A3E714ABE7BC00E8174D /* UIKit.framework */,
+				2E06A3E914ABE7BC00E8174D /* Foundation.framework */,
+				2E06A3EB14ABE7BC00E8174D /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2E06A3ED14ABE7BC00E8174D /* PhotoFilters */ = {
+			isa = PBXGroup;
+			children = (
+				2E06A3F614ABE7BC00E8174D /* FilterAppDelegate.h */,
+				2E06A3F714ABE7BC00E8174D /* FilterAppDelegate.m */,
+				2E06A3F914ABE7BC00E8174D /* MainStoryboard.storyboard */,
+				2E06A3FC14ABE7BC00E8174D /* FilterViewController.h */,
+				2E06A3FD14ABE7BC00E8174D /* FilterViewController.m */,
+				2E06A3EE14ABE7BC00E8174D /* Supporting Files */,
+			);
+			path = PhotoFilters;
+			sourceTree = "<group>";
+		};
+		2E06A3EE14ABE7BC00E8174D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2E06A3EF14ABE7BC00E8174D /* PhotoFilters-Info.plist */,
+				2E06A3F014ABE7BC00E8174D /* InfoPlist.strings */,
+				2E06A3F314ABE7BC00E8174D /* main.m */,
+				2E06A3F514ABE7BC00E8174D /* PhotoFilters-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2E06A3E214ABE7BB00E8174D /* PhotoFilters */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2E06A40114ABE7BC00E8174D /* Build configuration list for PBXNativeTarget "PhotoFilters" */;
+			buildPhases = (
+				2E06A3DF14ABE7BB00E8174D /* Sources */,
+				2E06A3E014ABE7BB00E8174D /* Frameworks */,
+				2E06A3E114ABE7BB00E8174D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PhotoFilters;
+			productName = PhotoFilters;
+			productReference = 2E06A3E314ABE7BB00E8174D /* PhotoFilters.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2E06A3DA14ABE7BB00E8174D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = Icoms;
+			};
+			buildConfigurationList = 2E06A3DD14ABE7BB00E8174D /* Build configuration list for PBXProject "PhotoFilters" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 2E06A3D814ABE7BB00E8174D;
+			productRefGroup = 2E06A3E414ABE7BB00E8174D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2E06A3E214ABE7BB00E8174D /* PhotoFilters */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2E06A3E114ABE7BB00E8174D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E06A3F214ABE7BC00E8174D /* InfoPlist.strings in Resources */,
+				2E06A3FB14ABE7BC00E8174D /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2E06A3DF14ABE7BB00E8174D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E06A3F414ABE7BC00E8174D /* main.m in Sources */,
+				2E06A3F814ABE7BC00E8174D /* FilterAppDelegate.m in Sources */,
+				2E06A3FE14ABE7BC00E8174D /* FilterViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2E06A3F014ABE7BC00E8174D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2E06A3F114ABE7BC00E8174D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		2E06A3F914ABE7BC00E8174D /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2E06A3FA14ABE7BC00E8174D /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2E06A3FF14ABE7BC00E8174D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		2E06A40014ABE7BC00E8174D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2E06A40214ABE7BC00E8174D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PhotoFilters/PhotoFilters-Prefix.pch";
+				INFOPLIST_FILE = "PhotoFilters/PhotoFilters-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		2E06A40314ABE7BC00E8174D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PhotoFilters/PhotoFilters-Prefix.pch";
+				INFOPLIST_FILE = "PhotoFilters/PhotoFilters-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2E06A3DD14ABE7BB00E8174D /* Build configuration list for PBXProject "PhotoFilters" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2E06A3FF14ABE7BC00E8174D /* Debug */,
+				2E06A40014ABE7BC00E8174D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2E06A40114ABE7BC00E8174D /* Build configuration list for PBXNativeTarget "PhotoFilters" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2E06A40214ABE7BC00E8174D /* Debug */,
+				2E06A40314ABE7BC00E8174D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2E06A3DA14ABE7BB00E8174D /* Project object */;
+}
