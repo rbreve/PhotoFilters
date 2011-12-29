@@ -15,6 +15,9 @@
 		2E06A3F814ABE7BC00E8174D /* FilterAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E06A3F714ABE7BC00E8174D /* FilterAppDelegate.m */; };
 		2E06A3FB14ABE7BC00E8174D /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E06A3F914ABE7BC00E8174D /* MainStoryboard.storyboard */; };
 		2E06A3FE14ABE7BC00E8174D /* FilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E06A3FD14ABE7BC00E8174D /* FilterViewController.m */; };
+		2E06A40514ABE88600E8174D /* imagen.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E06A40414ABE88600E8174D /* imagen.png */; };
+		2E06A40714ABE93900E8174D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E06A40614ABE93900E8174D /* QuartzCore.framework */; };
+		2E06A40914ABEA8000E8174D /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E06A40814ABEA8000E8174D /* CoreImage.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,15 +25,18 @@
 		2E06A3E714ABE7BC00E8174D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2E06A3E914ABE7BC00E8174D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2E06A3EB14ABE7BC00E8174D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		2E06A3EF14ABE7BC00E8174D /* PhotoFilters-Info.plist */ = {isa = PBXFileReference; path = "PhotoFilters-Info.plist"; sourceTree = "<group>"; };
+		2E06A3EF14ABE7BC00E8174D /* PhotoFilters-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PhotoFilters-Info.plist"; sourceTree = "<group>"; };
 		2E06A3F114ABE7BC00E8174D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2E06A3F314ABE7BC00E8174D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		2E06A3F514ABE7BC00E8174D /* PhotoFilters-Prefix.pch */ = {isa = PBXFileReference; path = "PhotoFilters-Prefix.pch"; sourceTree = "<group>"; };
-		2E06A3F614ABE7BC00E8174D /* FilterAppDelegate.h */ = {isa = PBXFileReference; path = FilterAppDelegate.h; sourceTree = "<group>"; };
+		2E06A3F514ABE7BC00E8174D /* PhotoFilters-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PhotoFilters-Prefix.pch"; sourceTree = "<group>"; };
+		2E06A3F614ABE7BC00E8174D /* FilterAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FilterAppDelegate.h; sourceTree = "<group>"; };
 		2E06A3F714ABE7BC00E8174D /* FilterAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FilterAppDelegate.m; sourceTree = "<group>"; };
 		2E06A3FA14ABE7BC00E8174D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		2E06A3FC14ABE7BC00E8174D /* FilterViewController.h */ = {isa = PBXFileReference; path = FilterViewController.h; sourceTree = "<group>"; };
+		2E06A3FC14ABE7BC00E8174D /* FilterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FilterViewController.h; sourceTree = "<group>"; };
 		2E06A3FD14ABE7BC00E8174D /* FilterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FilterViewController.m; sourceTree = "<group>"; };
+		2E06A40414ABE88600E8174D /* imagen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imagen.png; sourceTree = "<group>"; };
+		2E06A40614ABE93900E8174D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		2E06A40814ABEA8000E8174D /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +44,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E06A40914ABEA8000E8174D /* CoreImage.framework in Frameworks */,
+				2E06A40714ABE93900E8174D /* QuartzCore.framework in Frameworks */,
 				2E06A3E814ABE7BC00E8174D /* UIKit.framework in Frameworks */,
 				2E06A3EA14ABE7BC00E8174D /* Foundation.framework in Frameworks */,
 				2E06A3EC14ABE7BC00E8174D /* CoreGraphics.framework in Frameworks */,
@@ -50,6 +58,8 @@
 		2E06A3D814ABE7BB00E8174D = {
 			isa = PBXGroup;
 			children = (
+				2E06A40814ABEA8000E8174D /* CoreImage.framework */,
+				2E06A40614ABE93900E8174D /* QuartzCore.framework */,
 				2E06A3ED14ABE7BC00E8174D /* PhotoFilters */,
 				2E06A3E614ABE7BC00E8174D /* Frameworks */,
 				2E06A3E414ABE7BB00E8174D /* Products */,
@@ -77,6 +87,7 @@
 		2E06A3ED14ABE7BC00E8174D /* PhotoFilters */ = {
 			isa = PBXGroup;
 			children = (
+				2E06A40414ABE88600E8174D /* imagen.png */,
 				2E06A3F614ABE7BC00E8174D /* FilterAppDelegate.h */,
 				2E06A3F714ABE7BC00E8174D /* FilterAppDelegate.m */,
 				2E06A3F914ABE7BC00E8174D /* MainStoryboard.storyboard */,
@@ -151,6 +162,7 @@
 			files = (
 				2E06A3F214ABE7BC00E8174D /* InfoPlist.strings in Resources */,
 				2E06A3FB14ABE7BC00E8174D /* MainStoryboard.storyboard in Resources */,
+				2E06A40514ABE88600E8174D /* imagen.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

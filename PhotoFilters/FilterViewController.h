@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface FilterViewController : UIViewController
+@property (strong, nonatomic) IBOutlet UIImageView *photoView;
 
 @end

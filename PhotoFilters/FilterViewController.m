@@ -7,8 +7,10 @@
 //
 
 #import "FilterViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation FilterViewController
+@synthesize photoView;
 
 - (void)didReceiveMemoryWarning
 {
@@ -21,11 +23,35 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-}
+
+    
+    //CIColorInvert just works
+    
+    CIFilter* filter = [CIFilter filterWithName:@"CIColorControls"];
+    
+    CIImage *inputImage = [[CIImage alloc] initWithImage:[UIImage imageNamed:@"imagen.png"]];
+    
+//    self.view.layer.filters = [NSArray arrayWithObject:filter];
+    
+    [filter setValue:inputImage forKey:@"inputImage"];
+    [filter setValue:[NSNumber numberWithFloat:1.5] forKey:@"inputContrast"];
+   // [filter setValue:[NSNumber numberWithFloat:5] forKey:@"inputRadius"];
+
+    
+    
+    CIContext *context = [CIContext contextWithOptions:nil];
+
+    if(filter.outputImage){
+        NSLog(@"si");
+    }
+    
+    self.photoView.image = [UIImage imageWithCGImage:[context createCGImage:filter.outputImage fromRect:filter.outputImage.extent]];
+    
+ }
 
 - (void)viewDidUnload
 {
+    [self setPhotoView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
