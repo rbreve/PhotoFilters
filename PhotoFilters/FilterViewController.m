@@ -10,6 +10,7 @@
 #import <QuartzCore/QuartzCore.h>
 
 @implementation FilterViewController
+@synthesize amount;
 @synthesize photoView;
 
 - (void)didReceiveMemoryWarning
@@ -25,16 +26,20 @@
     [super viewDidLoad];
 
     
-    //CIColorInvert just works
-    
+     
     CIFilter* filter = [CIFilter filterWithName:@"CIColorControls"];
+    //CIFilter* satFilter = [CIFilter filterWithName:@""];
     
     CIImage *inputImage = [[CIImage alloc] initWithImage:[UIImage imageNamed:@"imagen.png"]];
     
 //    self.view.layer.filters = [NSArray arrayWithObject:filter];
     
+    
     [filter setValue:inputImage forKey:@"inputImage"];
+    
     [filter setValue:[NSNumber numberWithFloat:1.5] forKey:@"inputContrast"];
+    [filter setValue:[NSNumber numberWithFloat:0.3] forKey:@"inputSaturation"];
+    
    // [filter setValue:[NSNumber numberWithFloat:5] forKey:@"inputRadius"];
 
     
@@ -52,6 +57,7 @@
 - (void)viewDidUnload
 {
     [self setPhotoView:nil];
+    [self setAmount:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -83,4 +89,42 @@
     return YES;
 }
 
+- (IBAction)applyFilter:(UIButton *)sender {
+    CIContext *context = [CIContext contextWithOptions:nil];
+
+    CIFilter* filter;
+    
+    if([sender.titleLabel.text isEqualToString:@"Contrast"]){
+        
+       filter = [CIFilter filterWithName:@"CIColorControls"];
+        
+        CIImage *inputImage = [[CIImage alloc] initWithImage:[UIImage imageNamed:@"imagen.png"]];
+
+        [filter setValue:inputImage forKey:@"inputImage"];
+        
+        [filter setValue:[NSNumber numberWithFloat:amount.value] forKey:@"inputContrast"];
+        
+        [amount setMaximumValue:4.0];
+      
+
+    }else if([sender.titleLabel.text isEqualToString:@"Saturation"]){
+        
+        filter = [CIFilter filterWithName:@"CIColorControls"];
+        
+        CIImage *inputImage = [[CIImage alloc] initWithImage:[UIImage imageNamed:@"imagen.png"]];
+        
+        [filter setValue:inputImage forKey:@"inputImage"];
+        
+        [filter setValue:[NSNumber numberWithFloat:amount.value] forKey:@"inputSaturation"];
+        
+        [amount setMaximumValue:1.0];
+
+    }
+    
+    
+      self.photoView.image = [UIImage imageWithCGImage:[context createCGImage:filter.outputImage fromRect:filter.outputImage.extent]];
+    
+}
+- (IBAction)sliderChanged:(id)sender {
+}
 @end

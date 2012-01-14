@@ -10,5 +10,8 @@
 
 @interface FilterViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UIImageView *photoView;
+- (IBAction)applyFilter:(id)sender;
+@property (strong, nonatomic) IBOutlet UISlider *amount;
+- (IBAction)sliderChanged:(id)sender;
 
 @end
