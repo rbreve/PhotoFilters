@@ -7,6 +7,7 @@
 //
 
 #import "FilterViewController.h"
+#import "UIImage+Crop.h"
 #import <QuartzCore/QuartzCore.h>
 
 @interface FilterViewController()
@@ -173,6 +174,7 @@
     [layerImage drawInRect:rect blendMode:blendMode alpha:alpha];
     
     UIImage *resultingImage = UIGraphicsGetImageFromCurrentImageContext();  
+    
     UIGraphicsEndImageContext();  
     
     [self.photoView setImage:resultingImage];
@@ -215,7 +217,8 @@
     [self.photoView setImage:imagePhoto];
     self.photoView.frame = CGRectMake(84, 45, 600, 600);
     self.photoView.contentMode = UIViewContentModeScaleAspectFill;
-
+    
+    imagePhoto = [imagePhoto imageByScalingAndCroppingForSize:CGSizeMake(600, 600)];
     _originalImage = imagePhoto;
 }
 - (IBAction)loadPhoto:(id)sender {

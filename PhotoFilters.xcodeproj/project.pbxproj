@@ -30,6 +30,8 @@
 		2E1BDE2A14C3A4FA00CC555F /* stars.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E1BDE2914C3A4FA00CC555F /* stars.png */; };
 		2ED507A814C3EB2B0048C2ED /* blue2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2ED507A714C3EB2B0048C2ED /* blue2.png */; };
 		2ED507AF14C3FEF60048C2ED /* old-paper.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2ED507AE14C3FEF60048C2ED /* old-paper.jpg */; };
+		2ED507B114C405680048C2ED /* nyc.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2ED507B014C405680048C2ED /* nyc.jpg */; };
+		2ED507B414C40B3C0048C2ED /* UIImage+Crop.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ED507B314C40B3C0048C2ED /* UIImage+Crop.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +63,9 @@
 		2E1BDE2914C3A4FA00CC555F /* stars.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stars.png; sourceTree = "<group>"; };
 		2ED507A714C3EB2B0048C2ED /* blue2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue2.png; sourceTree = "<group>"; };
 		2ED507AE14C3FEF60048C2ED /* old-paper.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "old-paper.jpg"; sourceTree = "<group>"; };
+		2ED507B014C405680048C2ED /* nyc.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nyc.jpg; sourceTree = "<group>"; };
+		2ED507B214C40B3C0048C2ED /* UIImage+Crop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Crop.h"; sourceTree = "<group>"; };
+		2ED507B314C40B3C0048C2ED /* UIImage+Crop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Crop.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +116,7 @@
 		2E06A3ED14ABE7BC00E8174D /* PhotoFilters */ = {
 			isa = PBXGroup;
 			children = (
+				2ED507B014C405680048C2ED /* nyc.jpg */,
 				2ED507AE14C3FEF60048C2ED /* old-paper.jpg */,
 				2ED507A714C3EB2B0048C2ED /* blue2.png */,
 				2E1BDE2914C3A4FA00CC555F /* stars.png */,
@@ -129,6 +135,8 @@
 				2E06A3F914ABE7BC00E8174D /* MainStoryboard.storyboard */,
 				2E06A3FC14ABE7BC00E8174D /* FilterViewController.h */,
 				2E06A3FD14ABE7BC00E8174D /* FilterViewController.m */,
+				2ED507B214C40B3C0048C2ED /* UIImage+Crop.h */,
+				2ED507B314C40B3C0048C2ED /* UIImage+Crop.m */,
 				2E06A3EE14ABE7BC00E8174D /* Supporting Files */,
 			);
 			path = PhotoFilters;
@@ -211,6 +219,7 @@
 				2E1BDE2A14C3A4FA00CC555F /* stars.png in Resources */,
 				2ED507A814C3EB2B0048C2ED /* blue2.png in Resources */,
 				2ED507AF14C3FEF60048C2ED /* old-paper.jpg in Resources */,
+				2ED507B114C405680048C2ED /* nyc.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,6 +233,7 @@
 				2E06A3F414ABE7BC00E8174D /* main.m in Sources */,
 				2E06A3F814ABE7BC00E8174D /* FilterAppDelegate.m in Sources */,
 				2E06A3FE14ABE7BC00E8174D /* FilterViewController.m in Sources */,
+				2ED507B414C40B3C0048C2ED /* UIImage+Crop.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
