@@ -9,9 +9,17 @@
 #import "FilterViewController.h"
 #import <QuartzCore/QuartzCore.h>
 
+@interface FilterViewController()
+@property (nonatomic, strong) UIPopoverController *popController;
+@property (nonatomic, strong) UIImage *originalImage;
+@end
+
 @implementation FilterViewController
+@synthesize pickPhoto;
 @synthesize amount;
 @synthesize photoView;
+@synthesize popController = _popController;
+@synthesize originalImage = _originalImage;
 
 - (void)didReceiveMemoryWarning
 {
@@ -24,33 +32,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
     
-     
-    CIFilter* filter = [CIFilter filterWithName:@"CIColorControls"];
-    //CIFilter* satFilter = [CIFilter filterWithName:@""];
-    
-    CIImage *inputImage = [[CIImage alloc] initWithImage:[UIImage imageNamed:@"imagen.png"]];
-    
-//    self.view.layer.filters = [NSArray arrayWithObject:filter];
-    
-    
-    [filter setValue:inputImage forKey:@"inputImage"];
-    
-    [filter setValue:[NSNumber numberWithFloat:1.5] forKey:@"inputContrast"];
-    [filter setValue:[NSNumber numberWithFloat:0.3] forKey:@"inputSaturation"];
-    
-   // [filter setValue:[NSNumber numberWithFloat:5] forKey:@"inputRadius"];
-
-    
-    
-    CIContext *context = [CIContext contextWithOptions:nil];
-
-    if(filter.outputImage){
-        NSLog(@"si");
-    }
-    
-    self.photoView.image = [UIImage imageWithCGImage:[context createCGImage:filter.outputImage fromRect:filter.outputImage.extent]];
+    _originalImage = [self.photoView.image copy];
     
  }
 
@@ -58,6 +41,7 @@
 {
     [self setPhotoView:nil];
     [self setAmount:nil];
+    [self setPickPhoto:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -89,9 +73,13 @@
     return YES;
 }
 
+
+
 - (IBAction)applyFilter:(UIButton *)sender {
     CIContext *context = [CIContext contextWithOptions:nil];
-
+    
+    photoView.image = [_originalImage copy];
+    
     CIFilter* filter;
     
     if([sender.titleLabel.text isEqualToString:@"Contrast"]){
@@ -111,20 +99,138 @@
         
         filter = [CIFilter filterWithName:@"CIColorControls"];
         
-        CIImage *inputImage = [[CIImage alloc] initWithImage:[UIImage imageNamed:@"imagen.png"]];
+        CIImage *inputImage = [[CIImage alloc] initWithImage:self.photoView.image];
         
         [filter setValue:inputImage forKey:@"inputImage"];
         
-        [filter setValue:[NSNumber numberWithFloat:amount.value] forKey:@"inputSaturation"];
+        [filter setValue:[NSNumber numberWithFloat:2] forKey:@"inputSaturation"];
         
-        [amount setMaximumValue:1.0];
 
     }
     
     
-      self.photoView.image = [UIImage imageWithCGImage:[context createCGImage:filter.outputImage fromRect:filter.outputImage.extent]];
+      [self.photoView setImage:[UIImage imageWithCGImage:[context createCGImage:filter.outputImage fromRect:filter.outputImage.extent]]];
     
 }
 - (IBAction)sliderChanged:(id)sender {
+}
+
+- (void) doFilter:(NSString *) filterName{
+    
+    UIGraphicsBeginImageContext(self.photoView.image.size);  
+
+    UIImage *layerImage;
+    UIImage *photo = self.photoView.image;
+    CGBlendMode blendMode;
+    CGFloat alpha; 
+    
+    CGRect rect = CGRectMake(0, 0, 600, 600);
+
+    if([filterName isEqualToString:@"blue"]){
+        alpha = 0.7;
+        blendMode = kCGBlendModeOverlay;
+        layerImage = [UIImage imageNamed:@"blue.png"];
+    }
+    
+    if ([filterName isEqualToString:@"vignette"]){
+        alpha = 0.7;
+        blendMode = kCGBlendModeHardLight;
+        layerImage = [UIImage imageNamed:@"vignette.png"];
+    }
+    
+    if ([filterName isEqualToString:@"vignettewhite"]){
+        alpha = 0.7;
+        blendMode = kCGBlendModeSoftLight;
+        layerImage = [UIImage imageNamed:@"vignette3.png"];
+    }
+    
+    if([filterName isEqualToString:@"vintage60"]){
+        alpha = 0.7;
+        blendMode =kCGBlendModeLighten;
+        layerImage = [UIImage imageNamed:@"yellowbrown.png"];
+    }
+    
+    if([filterName isEqualToString:@"oldpaper"]){
+        alpha = 0.7;
+        blendMode = kCGBlendModeMultiply;
+        layerImage = [UIImage imageNamed:@"old-paper.jpg"];
+    }
+    
+    if([filterName isEqualToString:@"stars"]){
+        alpha = 0.8;
+        blendMode =kCGBlendModeOverlay;
+        layerImage = [UIImage imageNamed:@"stars.png"];
+    }
+    
+    if([filterName isEqualToString:@"vivid"]){
+        alpha = 0.7;
+        blendMode =kCGBlendModeOverlay;
+        layerImage = [UIImage imageNamed:@"black.png"];
+    }
+    
+    
+    [photo drawInRect:rect];
+    [layerImage drawInRect:rect blendMode:blendMode alpha:alpha];
+    
+    UIImage *resultingImage = UIGraphicsGetImageFromCurrentImageContext();  
+    UIGraphicsEndImageContext();  
+    
+    [self.photoView setImage:resultingImage];
+}
+
+- (IBAction)applyVignette:(UIButton *)sender {
+      
+    [self.photoView setImage:_originalImage];
+    
+   
+    if([sender.titleLabel.text isEqualToString:@"Vintage"]){
+        [self doFilter:@"oldpaper"];
+    }
+    
+    if([sender.titleLabel.text isEqualToString:@"Lomo1"]){
+        [self doFilter:@"vintage60"];
+        [self doFilter:@"vignette"];
+        
+    }
+    
+    if([sender.titleLabel.text isEqualToString:@"Lomo2"]){
+        [self doFilter:@"stars"];
+        [self doFilter:@"vignette"];
+
+    }
+    
+    
+    if([sender.titleLabel.text isEqualToString:@"Vignette"]){
+        [self doFilter:@"vivid"];
+        [self doFilter:@"vignettewhite"];
+
+
+    }
+    
+ }
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
+    UIImage *imagePhoto = [info objectForKey:UIImagePickerControllerOriginalImage];
+    
+    [self.photoView setImage:imagePhoto];
+    self.photoView.frame = CGRectMake(84, 45, 600, 600);
+    self.photoView.contentMode = UIViewContentModeScaleAspectFill;
+
+    _originalImage = imagePhoto;
+}
+- (IBAction)loadPhoto:(id)sender {
+    
+    if (![_popController isPopoverVisible]) {
+        UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+        [imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+        [imagePicker setDelegate:self];
+        if (_popController == nil) {
+            _popController = [[UIPopoverController alloc] initWithContentViewController:imagePicker];
+        }
+    }   
+    
+    [_popController presentPopoverFromBarButtonItem:pickPhoto permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
+
+
 }
 @end
