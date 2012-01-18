@@ -13,7 +13,7 @@
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" image="nyc.jpg" id="1e7-xF-db6">
+                            <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" image="foto1.jpg" id="1e7-xF-db6">
                                 <rect key="frame" x="84" y="45" width="600" height="600"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
@@ -152,7 +152,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="nyc.jpg" width="820" height="1200"/>
+        <image name="foto1.jpg" width="600" height="600"/>
     </resources>
     <classes>
         <class className="FilterViewController" superclassName="UIViewController">

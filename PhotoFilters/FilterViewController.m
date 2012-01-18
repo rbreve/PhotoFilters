@@ -85,7 +85,7 @@
     
     if([sender.titleLabel.text isEqualToString:@"Contrast"]){
         
-       filter = [CIFilter filterWithName:@"CIColorControls"];
+        filter = [CIFilter filterWithName:@"CIColorControls"];
         
         CIImage *inputImage = [[CIImage alloc] initWithImage:[UIImage imageNamed:@"imagen.png"]];
 
@@ -169,6 +169,22 @@
         layerImage = [UIImage imageNamed:@"black.png"];
     }
     
+    if([filterName isEqualToString:@"saturation"]){
+        CIContext *context = [CIContext contextWithOptions:nil];
+        
+        CIFilter* filter;
+
+        filter = [CIFilter filterWithName:@"CIColorControls"];
+        
+        CIImage *inputImage = [[CIImage alloc] initWithImage:self.photoView.image];
+        
+        [filter setValue:inputImage forKey:@"inputImage"];
+        
+        [filter setValue:[NSNumber numberWithFloat:2] forKey:@"inputSaturation"];
+        
+        [self.photoView setImage:[UIImage imageWithCGImage:[context createCGImage:filter.outputImage fromRect:filter.outputImage.extent]]];
+        return;
+    }
     
     [photo drawInRect:rect];
     [layerImage drawInRect:rect blendMode:blendMode alpha:alpha];
@@ -196,6 +212,7 @@
     }
     
     if([sender.titleLabel.text isEqualToString:@"Lomo2"]){
+        
         [self doFilter:@"stars"];
         [self doFilter:@"vignette"];
 
@@ -203,8 +220,8 @@
     
     
     if([sender.titleLabel.text isEqualToString:@"Vignette"]){
-        [self doFilter:@"vivid"];
-        [self doFilter:@"vignettewhite"];
+        [self doFilter:@"saturation"];
+        [self doFilter:@"vignette"];
 
 
     }
